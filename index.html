@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Taxi Service </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Orbitron:wght@400..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- slick -->
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+    <!-- mdb -->
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primarycolor: #09294a;
+            --secondarycolor: #ffc20e;
+            --tertiraycolor: #0c3866;
+            --fontheading: "Playfair Display SC", serif;
+            --fontcontent: "Crimson Text", serif;
+        }
+
+        .fonthead {
+            font-family: var(--fontheading);
+            font-weight: 700;
+        }
+
+        .fontcontent {
+            font-family: var(--fontcontent);
+        }
+
+
+
+        footer.footer.bg-body-tertiary {
+            background-color: var(--tertiraycolor) !important;
+
+        }
+
+        .bg-body-tertiary {
+            --bs-bg-opacity: 1;
+            background-color: var(--primarycolor) !important;
+        }
+
+        .navbar a {
+            color: var(--secondarycolor);
+            font-size: 18px;
+            font-family: var(--fontheading);
+        }
+
+        .navbar a:hover {
+            color: white;
+        }
+
+        .twotext {
+            font-family: var(--fontcontent);
+            font-size: 20px;
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link.show {
+            color: rgb(255, 255, 255);
+        }
+
+        .navbar-nav .nav-link.active:hover,
+        .navbar-nav .nav-link.show:hover {
+            color: var(--secondarycolor);
+        }
+
+        .navbar-brand:focus,
+        .navbar-brand:hover {
+            color: white !important;
+        }
+
+        .sectionOne {
+            /* background-color: var(--tertiraycolor); */
+            color: var(--primarycolor);
+        }
+
+        .sectionTwo {
+            background-color: var(--tertiraycolor);
+            color: white;
+        }
+
+        .nav-tabs .nav-link {
+            margin-bottom: calc(-1* var(--bs-nav-tabs-border-width));
+            border: var(--bs-nav-tabs-border-width) solid transparent;
+            border-radius: 0px !important;
+            color: var(--primarycolor);
+            margin-right: 5px;
+
+        }
+
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active {
+            color: var(--primarycolor) !important;
+        }
+
+        .sectionFour {
+            background-color: var(--tertiraycolor);
+        }
+
+        .form-control:focus {
+            color: var(--bs-body-color);
+            background-color: var(--bs-body-bg);
+            border-color: var(--primarycolor);
+            outline: 0;
+            box-shadow: none;
+        }
+
+        strong {
+            color: #13005A;
+        }
+
+        .accordion-item:first-of-type>.accordion-header .accordion-button {
+            /* background-color: #141e6184; */
+            color: white;
+
+        }
+
+
+        .accordion {
+
+            color: var(--primarycolor);
+            border-bottom: 7px;
+
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #141e6184;
+            color: white;
+
+        }
+
+        .navbar-toggler {
+            padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+            font-size: var(--bs-navbar-toggler-font-size);
+            line-height: 1;
+            color: rgba(87, 137, 207, 0.467);
+            background-color: white !important;
+        }
+
+        .mx-auto {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .sectionsThree {
+            margin: 10px;
+            padding: 0px;
+
+        }
+
+        .runcar img {
+            height: 110px;
+        }
+
+        .carrun {
+            position: relative;
+            width: 100%;
+            /* Full width of the viewport */
+            height: 175px;
+            /* Full height of the viewport */
+            overflow: hidden;
+        }
+
+        .runcar {
+            position: absolute;
+            bottom: 0;
+            left: -800px;
+            margin-bottom: 0px;
+            animation: moveRight 5s linear infinite;
+
+        }
+
+        /* Define the keyframes for the animation */
+        @keyframes moveRight {
+            from {
+                transform: translateX(0);
+
+            }
+
+            to {
+                transform: translateX(100vw);
+
+            }
+        }
+
+        .btn {
+            --bs-btn-color: #ffffff;
+            /* --bs-btn-border-color: #ffffff; */
+            --bs-btn-hover-color: #6B728E;
+            --bs-btn-hover-bg: white !important;
+            --bs-btn-hover-border-color: #6B728E !important;
+            --bs-btn-focus-shadow-rgb: 25, 135, 84;
+            --bs-btn-active-color: #6B728E;
+            --bs-btn-active-bg: ;
+            --bs-btn-active-border-color: white;
+            /* --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); */
+            /* --bs-btn-disabled-color: #2e1987; */
+            /* --bs-btn-disabled-bg: transparent; */
+            /* --bs-btn-disabled-border-color: #2e1987; */
+            /* --bs-gradient: none; */
+        }
+
+        .onetext {
+            color: var(--primarycolor);
+            font-family: var(--fontheading);
+            font-weight: 700;
+        }
+
+
+
+        h2 {
+            color: var(--primarycolor);
+        }
+
+        h3 {
+            color: rgb(255, 255, 255);
+        }
+
+        .sideimg {
+            animation: bounce 5s infinite;
+            height: 300px;
+            margin-bottom: 25px;
+        }
+
+
+        .btn {
+            background-color: var(--secondarycolor);
+            color: var(--tertiraycolor);
+
+
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: var(--tertiraycolor) !important;
+            border-radius: 30px !important;
+        }
+
+        .btn a:hover {
+            text-decoration: none;
+            color: var(--primarycolor) !important;
+            border-radius: 30px !important;
+        }
+
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .booking-form4 {
+            background-color: var(--tertiraycolor);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-form4 h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .form-btn {
+            text-align: center;
+        }
+
+        .form-select:focus {
+            border-color: #ffffff;
+            outline: 0;
+            box-shadow: none;
+            color: #8a8989;
+        }
+
+        .btn.th-btn {
+            background-color: var(--secondarycolor);
+            color: var(--tertiraycolor);
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .btn.th-btn:hover {
+            background-color: white;
+            color: #1B1A55;
+        }
+
+        /* Adjustments for responsiveness */
+        @media (max-width: 768px) {
+            .col-md-6 {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .runcar img {
+                height: 100px;
+            }
+        }
+
+        .bgimg {
+            background-image: url(./IMAGES/headerimg2.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            border-radius: 10px;
+            height: 270px;
+            animation: zoomInOut 10s infinite alternate;
+        }
+
+        .y1img {
+            height: 80px;
+        }
+
+        .contentImg {
+            font-size: 35px;
+            text-transform: uppercase;
+            color: var(--primarycolor);
+            text-shadow: 2px 2px 2px rgb(102, 100, 100);
+
+        }
+
+        .y2img {
+            height: 75px;
+        }
+
+        .y3img {
+            height: 70px;
+        }
+
+        .headingbg {
+            background-image: url(./IMAGES/headerimg3.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 650px;
+            position: relative;
+            overflow: hidden;
+            /* width: 100%;
+            height: auto;
+            width: 100%;
+            height: auto; */
+            /* animation: zoomInOutbg 5s infinite; */
+        }
+
+        .foothead {
+            color: white;
+            text-decoration: none !important;
+            font-family: var(--fontheading);
+            font-weight: 700;
+        }
+
+        footer li a {
+            text-decoration: none;
+            color: var(--secondarycolor);
+
+        }
+
+        footer li {
+            list-style-type: none;
+            font-size: 25px;
+        }
+
+        img.contimg,
+        svg {
+            vertical-align: middle;
+            height: 50px !important;
+        }
+
+        .nav-link active {
+            color: white;
+        }
+
+        @keyframes zoomInOutbg {
+            0% {
+                transform: scale(1);
+                /* Normal size */
+            }
+
+            50% {
+                transform: scale(1.05);
+                /* Zoom in */
+            }
+
+            100% {
+                transform: scale(1);
+                /* Zoom out to normal size */
+            }
+        }
+
+        @keyframes zoomInOut {
+            0% {
+                background-size: 100%;
+            }
+
+            50% {
+                background-size: 110%;
+            }
+
+            100% {
+                background-size: 100%;
+            }
+        }
+
+        .contactmap {
+            height: 300px !important;
+            width: 400px !important;
+            box-shadow: 10px 10px 5px rgb(200, 201, 203);
+        }
+
+        .contact {
+            box-shadow: 5px 5px 10px 2px rgb(200, 201, 203);
+        }
+
+        .dull {
+            color: #5e5c5c !important;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-collapse {
+                display: flex !important;
+                flex-basis: auto;
+            }
+        }
+
+        .headerbar {
+            height: 50px;
+            width: 100%;
+            color: white;
+            background-color: var(--secondarycolor);
+
+        }
+
+        footer li {
+            list-style-type: none;
+            font-size: 25px;
+            color: white !important;
+        }
+
+        .headimg {
+            height: 500px;
+        }
+
+        .headtxt {
+            position: relative;
+            top: 155px;
+            color:var(--secondarycolor);
+
+        }
+
+
+
+        .animated-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 4s steps(50, end);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- <div class="headerbar text-center d-flex justify-content-center align-items-center">
+        <h5>"Where Comfort Meets Convenience."</h5>
+    </div> -->
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="navbarr container-fluid">
+            <a class="fonthead navbar-brand" href="#" target="_blank"><b>CloudVista</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="fontcontent navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="px-4 nav-link" href="#tariff">Our Tariff</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="px-4 nav-link" href="#">Book a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="px-4 nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="px-4 nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+            </div>
+        </div>
+    </nav>
+    <!-- nav ends  -->
+
+    <!-- header -->
+    <div class="headingbg img-fluid">
+        <h1 class="headtxt fonthead text-center">
+            <span class="animated-text">Ride the Breeze... <br>With our CloudVista Tours and Travels...</span>
+
+        </h1>
+
+    </div>
+
+
+
+
+    <!-- </div> -->
+    <!-- header ends -->
+
+
+    <!-- sectionOne -->
+    <section class="sectionOne " id="about">
+        <div class="container pt-4 px-0">
+            <div class="row d-flex justify-content-center">
+                <div class="col-8">
+                    <h2 class="onetext text-center pb-3">How It Works</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 d-flex  justify-content-center align-items-center">
+
+                    <img src="./IMAGES/Order ride-bro (1).png" class=" sideimg img-fluid ">
+
+                </div>
+                <div class="col-md-6 text-center">
+                    <p class=" fontcontent text-start pt-2">
+                        Booking Made Simple <br>
+                        <br>
+                        Step 1: Enter Your Location - Tell us where you're starting from. <br>
+                        <br>
+                        Step 2: Choose Your Destination - Let us know where you're headed. <br>
+                        <br>
+                        Step 3: Confirm Your Ride - Select your ride type and confirm. <br>
+                    </p>
+                    <button class="btn d-flex justify-content-center align-items-center"> Book Your Ride Now</button>
+                </div>
+
+            </div>
+
+            </di>
+    </section>
+    <!-- sectionOne ends -->
+
+    <!-- section two -->
+    <section id="tariff" class="sectionTwo">
+        <div class="container  p-0">
+            <nav>
+                <div class="py-4 d-flex justify-content-center align-items-center  nav nav-tabs" id="nav-tab"
+                    role="tablist">
+                    <button class="btn nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                        aria-selected="true">Local Trips</button>
+                    <button class="btn  nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                        aria-selected="false">Out-Station
+                        Trips (One-Way)</button>
+                    <button class="btn nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                        type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Out-Station
+                        Trips (Round Trip)</button>
+
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                    tabindex="0">
+                    <ul class="text-start py-4">
+                        <li><span style="text-decoration: none; color: var(--secondarycolor) ;" href=""> Minimum
+                                Duration:</span>
+                            The minimum booking duration is 4 hours, with a charge of Rs 500.</li>
+                        <li class="pt-4"><span style="text-decoration: none; color: var(--secondarycolor) ;" href="">
+                                Additional Hour Charges:</span>
+                            Beyond the initial 4 hours, an extra charge of Rs 80 per hour will be applicable.</li>
+                        <li class="pt-4"><span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Food
+                                Responsibility:</span>
+                            Customers are required to assume responsibility for food arrangements.</li>
+                        <li class="pt-4"><span style="text-decoration: none; color: var(--secondarycolor) ;" href="">
+                                Cancellation Policy:</span>
+                            In the event of a cancellation, a charge of Rs 200 will be incurred if the cancellation
+                            notice is received less than 1 hour prior to the scheduled booking time.</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                    tabindex="0">
+                    <ul class="text-start py-4">
+                        <li><span style="text-decoration: none; color: var(--secondarycolor) ;" href=""> Minimum
+                            Duration:</span>
+                            A minimum charge of Rs 1300 is applicable for distances up to 150 km.</li>
+                        <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">
+                            Excess Kilometer Charge:</span>
+                            For distances exceeding 150 km, an additional charge of Rs 4 per kilometer will be applied.
+                        </li>
+                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Night Charge:</span>
+                            For services between 10 pm and 6 am, an extra charge of Rs 100 will be added.</li>
+                        <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Cancellation Charges:</span> 
+                            In the event of cancellation, a fee of Rs 200 will be levied.</li>
+                        <li class="pt-4">
+                            <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Additional Expenses:</span> 
+                            Bus charges and food expenses are not included and are the responsibility of the customers.
+                        </li>
+                    </ul>
+
+
+
+                </div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+                    tabindex="0">
+                    <ul class="text-start py-4">
+                        <li>  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Daily 12-Hour Rental:</span>
+                            The standard charge for a 12-hour period is Rs 1200. </li>
+                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Daily 12-Hour Rental with Distance Limit:</span> 
+                            For a 12-hour duration and up to 350 km, the rate remains Rs 1200.</li>
+                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href=""> Excess Kilometer Charge:</span>
+                            For distances exceeding 350 km, the charge is Rs 1300.</li>
+                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Additional Hourly Rate:</span>
+
+                            After the initial 12 hours, an extra charge of Rs 80 per hour will be applied, and customers
+                            are responsible for additional food and accommodation costs.</li>
+                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Night Charges:</span> 
+                            From 10 pm to 6 am, an additional charge of Rs 100 will be incurred.</li>
+                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Cancellation Fees:</span> 
+
+                        
+                            In case of cancellation, a fee of Rs 200 will be applicable.</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab"
+                    tabindex="0">...</div>
+            </div>
+        </div>
+    </section>
+    <!-- section two ends -->
+    <!-- car animation -->
+    <section>
+        <div class=" carrun  ">
+            <div class="fontcontent contentImg runcar ">
+                10% Offer on First Order...
+
+                <!-- <img  class="runcar" src="./IMAGES/carrun.png" alt=""> -->
+                <img src="./IMAGES/carclr.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- car animation ends -->
+
+
+
+
+
+    <!-- section three -->
+    <div class="sectionThree ">
+        <div class="container">
+            <div class="row py-4">
+                <div class="bgimg  col-md-6">
+                    <div>
+                        <h2 class=" fonthead text-center py-4">Why Choose Us ?</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 py-4 d-flex justify-content-center align-items-center">
+                    <ul class="fontcontent">
+                        <li>24/7 Availability: Reliable service around the clock.</li>
+                        <br>
+                        <li> Professional Drivers: Experienced and courteous chauffeurs.</li>
+                        <br>
+                        <li> Affordable Rates: Transparent pricing with no hidden fees.</li>
+                        <br>
+                        <li>Easy Booking: Simple online reservations or call us directly.</li>
+                        <br>
+                        <li> Safe and Clean: Well-maintained vehicles for your comfort.</li>
+                    </ul>
+                </div>
+                <div class="fontcontent py-4 col px-2 d-flex justify-content-between align-items-center">
+                    <div class="col-sm-4 ">
+
+                        <div class="ova-icon-box template1">
+                            <div class="text-center  content">
+                                <img class="y1img" src="./IMAGES/bestprice.png" alt="">
+                                <h4 class="text-center title">Best <br>Pricing </h4>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4 ">
+                        <div class="ova-icon-box template1">
+                            <div class="text-center content">
+                                <img class="y2img" src="./IMAGES/ontime.png" alt="">
+                                <h4 class="title">On-Time <br>Pickup </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="ova-icon-box template1">
+
+                            <div class="content text-center">
+                                <img class="y3img " src="./IMAGES/safety.png" alt="">
+                                <h4 class=" title">Safety <br> Guarantee</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- section three  ends-->
+
+
+    <!-- sectionfour -->
+    <section class="sectionFour" id="form">
+        <div class="container">
+            <div class="fontcontent row">
+                <div class="col-md-6 d-flex align-items-center">
+                    <!-- <img src="./CaroImage/car3.jpeg" class="img-fluid" alt=""> -->
+                </div>
+
+
+                <div class="booking-form4 ajax-contact th-bg">
+                    <h3 class="fonthead py-4 text-center th-title">Ready to Ride?</h3>
+                    <h2 style="color: white;" class="fonthead text-center th-title">Get where you need to go with ease.
+                    </h2>
+                    <form action="/submit-form" method="post" class="form" aria-label="Contact form">
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <input size="40" class="form-control" id="name" aria-required="true"
+                                    placeholder="Your Name" type="text" name="name" required />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input size="40" class="form-control" id="phone" aria-invalid="false"
+                                    placeholder="Phone Number" type="tel" name="phone" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input size="40" class="form-control" id="email" aria-required="true"
+                                    aria-invalid="false" placeholder="Email Address" type="email" name="email"
+                                    required />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input size="40" class="form-control" id="passengers" aria-required="true"
+                                    aria-invalid="false" placeholder="Number of passengers" type="number"
+                                    name="passengers" required />
+                            </div>
+                            <div class="form-group col-12">
+                                <select class="form-select text-center" aria-invalid="false" name="vehicle_type">
+                                    <option value="" disabled selected>Vehicle Type</option>
+                                    <option value="mini_4_seater">Mini- 4 Seater</option>
+                                    <option value="sedan_4_seater">Sedan-4 Seater</option>
+                                    <option value="suv_7_seater">SUV -7 Seater</option>
+                                    <option value="maxi_van_11_seater">Maxi Van -11 Seater</option>
+                                    <option value="bus_52_seater">Bus-52 Seater</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input size="40" class="form-control" id="start_destination" aria-required="true"
+                                    placeholder="Start Destination" type="text" name="start_destination" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input size="40" class="form-control" id="end_destination" aria-required="true"
+                                    placeholder="End Destination" type="text" name="end_destination" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input size="40" class="form-control" id="date" aria-required="true"
+                                    placeholder="Select Date" type="date" name="date" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input size="40" class="form-control" id="time" aria-required="true"
+                                    placeholder="Select Time" type="time" name="time" />
+                            </div>
+                            <div class="form-btn col-12">
+                                <button class="btn th-btn radius-btn" type="submit">Book Now</button>
+                            </div>
+                        </div>
+                        <p class="form-messages mb-0 mt-3"></p>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- section four ends -->
+
+
+    <!-- section five  -->
+    <section class="sectionFive">
+        <div class=" fontcontent container">
+            <div class="row py-4 text-center d-flex justify-content-around align-items-center">
+                <h2 class="fonthead py-4">Contact Us</h2>
+                <div class="col-lg-6 px-5 py-4 px-0 contact">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img class="contimg" src="./IMAGES/profile.png"
+                                alt=""></span>
+                        <input type="text" class="form-control" placeholder="Name" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img class="contimg" src="./IMAGES/mail-96.png"
+                                alt=""></span>
+                        <input type="text" class="form-control" placeholder="Email" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img class="contimg"
+                                src="./IMAGES/topic-96.png" alt=""></span>
+                        <input type="text" class=" form-control" placeholder="Message">
+                    </div>
+                    <button class="btn mt-2"><a href="">Contact Me</a></button>
+                </div>
+                <div class="contactmap">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.260929394309!2d76.96617597452014!3d11.01903915467286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85930d96714d1%3A0x663d60590213143d!2sCloudVista%20Acting%20Drivers%20and%20Travels!5e0!3m2!1sen!2sin!4v1724342461412!5m2!1sen!2sin"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section five ends -->
+
+
+
+    <!-- Footer -->
+    <footer class="footer bg-body-tertiary text-center">
+        <!-- Grid container -->
+        <div class="fontcontent container p-4">
+            <section class="fontcontent">
+                <form action="">
+
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <!-- <div class="col-auto">
+                            <p class="pt-2">
+                                <strong style="color:var(--secondarycolor);">Sign up for our recent offers</strong>
+                            </p>
+                        </div> -->
+
+                        <div class="col-md-5 col-12">
+
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input placeholder="Email Address" type="email" id="form5Example24"
+                                    class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <button data-mdb-ripple-init type="submit" class="fontcontent btn btn-outline mb-4">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section class="fontcontent mb-4">
+                <p style="color: white;">
+                    Thank you for choosing CloudVista Taxi Sevice. We’re committed to providing reliable and
+                    comfortable transportation. For bookings or inquiries, contact us. Safe travels!
+                </p>
+            </section>
+            <!-- Section: Text -->
+
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div style="color: white;" class="fontcontent col-sm-6 mb-4 mb-md-0">
+                        <!-- <h5 class="text-uppercase"> Quick Links</h5> -->
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="" href="#!">About </a>
+                            </li>
+                            <li>
+                                <a class="" href="#!">Phone</a>
+                            </li>
+                            <li>
+                                <a class="" href="#!">Email</a>
+                            </li>
+                            <li>
+                                <a class="" href="#!">Book Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col mb-4 mb-md-0">
+                        <!-- <h5 style="color: white;" class="text-uppercase">Links</h5> -->
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="" href="#!">Enquiry</a>
+                            </li>
+                            <li>
+                                <a class="" href="#!">Our Tariff</a>
+                            </li>
+                            <li>
+                                <a class="" href="#!">Career</a>
+                            </li>
+                            <li>
+                                <a class="" href="#!">Terms of Service</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-facebook-f"></i></a>
+
+            <!-- Twitter -->
+            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-twitter"></i></a>
+
+            <!-- Google -->
+            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-google"></i></a>
+
+            <!-- Instagram -->
+            <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-instagram"></i></a>
+
+
+        </section>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05); color: white;">
+            © 2020 Copyright:
+            <a class="text-reset fw-bold" href="#">CloudVista.co.in</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- footer ends -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</body>
+
+</html>

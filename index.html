@@ -28,6 +28,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
     <style>
         :root {
             --primarycolor: #09294a;
@@ -455,9 +456,10 @@
 
         .contactmap {
             height: 300px !important;
-            width: 400px !important;
+            width: 300px !important;
             box-shadow: 10px 10px 5px rgb(200, 201, 203);
         }
+
 
         .contact {
             box-shadow: 5px 5px 10px 2px rgb(200, 201, 203);
@@ -488,27 +490,72 @@
             color: white !important;
         }
 
-        .headimg {
-            height: 500px;
-        }
-
         .headtxt {
             position: relative;
-            top: 155px;
-            color:var(--secondarycolor);
-
+            top: 110px;
+            /* Adjust as needed */
+            color: var(--secondarycolor);
+            text-align: center;
         }
-
-
 
         .animated-text {
             display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 4s steps(50, end);
         }
 
-        @keyframes typing {
+        .line {
+            display: block;
+            overflow: hidden;
+            /* Hide overflowing content */
+            position: relative;
+            white-space: nowrap;
+            /* Ensure each line stays on one line */
+        }
+
+        .why {
+            color: white;
+            position: relative;
+            top: 50px;
+        }
+
+        .line span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(1em);
+            animation: reveal 0.5s ease-out forwards;
+        }
+
+        .line:nth-of-type(1) span {
+            animation: reveal 0.5s ease-out forwards;
+        }
+
+        .line:nth-of-type(2) span {
+            animation: reveal 0.5s ease-out 1s forwards;
+            /* Delay */
+        }
+
+        .line:nth-of-type(3) span {
+            animation: reveal 0.5s ease-out 2s forwards;
+            /* Further delay */
+        }
+
+        .form-group.error {
+            color: #e74c3c;
+            visibility: visible;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(1em);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes type {
             from {
                 width: 0;
             }
@@ -517,6 +564,26 @@
                 width: 100%;
             }
         }
+
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-collapse {
+                display: flex !important;
+                /* flex-basis: auto; */
+            }
+
+
+        }
+
+        /* @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        } */
     </style>
 </head>
 
@@ -527,7 +594,40 @@
         <h5>"Where Comfort Meets Convenience."</h5>
     </div> -->
     <!-- nav -->
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="navbarr container-fluid">
+            <a class="navbar-brand" href="#"><b>CloudVista</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" nav-link" href="#tariff">Our Tariff</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="px-4 nav-link" href="#form">Book a Ride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="px-4 nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="px-4 nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="navbarr container-fluid">
             <a class="fonthead navbar-brand" href="#" target="_blank"><b>CloudVista</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -544,348 +644,371 @@
                         <a class="px-4 nav-link" href="#tariff">Our Tariff</a>
                     </li>
                     <li class="nav-item">
-                        <a class="px-4 nav-link" href="#">Book a Ride</a>
+                        <a class="px-4 nav-link" href="#form">Book a Ride</a>
                     </li>
                     <li class="nav-item">
-                        <a class="px-4 nav-link" href="#">About Us</a>
+                        <a class="px-4 nav-link" href="#about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="px-4 nav-link" href="#">Contact</a>
+                        <a class="px-4 nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
-                <!-- <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form> -->
             </div>
         </div>
-    </nav>
+    </nav> -->
     <!-- nav ends  -->
 
     <!-- header -->
-    <div class="headingbg img-fluid">
+    <!-- <div class="headingbg img-fluid">
         <h1 class="headtxt fonthead text-center">
-            <span class="animated-text">Ride the Breeze... <br>With our CloudVista Tours and Travels...</span>
+            <span class="animated-text">Ride the Breeze... <br>With our CloudVista <br>
+                Tours and Travels...</span>
 
         </h1>
 
+    </div> -->
+    <div class="headingbg img-fluid">
+        <h1 class="headtxt fonthead text-center">
+            <span class="animated-text">
+                <span class="line">Ride the Breeze...</span>
+                <span class="line">With our CloudVista</span>
+                <span class="line">Tours and Travels...</span>
+            </span>
+        </h1>
     </div>
-
-
-
-
     <!-- </div> -->
     <!-- header ends -->
 
 
     <!-- sectionOne -->
-    <section class="sectionOne " id="about">
-        <div class="container pt-4 px-0">
-            <div class="row d-flex justify-content-center">
-                <div class="col-8">
-                    <h2 class="onetext text-center pb-3">How It Works</h2>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 d-flex  justify-content-center align-items-center">
-
-                    <img src="./IMAGES/Order ride-bro (1).png" class=" sideimg img-fluid ">
-
-                </div>
-                <div class="col-md-6 text-center">
-                    <p class=" fontcontent text-start pt-2">
-                        Booking Made Simple <br>
-                        <br>
-                        Step 1: Enter Your Location - Tell us where you're starting from. <br>
-                        <br>
-                        Step 2: Choose Your Destination - Let us know where you're headed. <br>
-                        <br>
-                        Step 3: Confirm Your Ride - Select your ride type and confirm. <br>
-                    </p>
-                    <button class="btn d-flex justify-content-center align-items-center"> Book Your Ride Now</button>
-                </div>
-
-            </div>
-
-            </di>
-    </section>
-    <!-- sectionOne ends -->
-
-    <!-- section two -->
-    <section id="tariff" class="sectionTwo">
-        <div class="container  p-0">
-            <nav>
-                <div class="py-4 d-flex justify-content-center align-items-center  nav nav-tabs" id="nav-tab"
-                    role="tablist">
-                    <button class="btn nav-link active" id="nav-home-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
-                        aria-selected="true">Local Trips</button>
-                    <button class="btn  nav-link" id="nav-profile-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
-                        aria-selected="false">Out-Station
-                        Trips (One-Way)</button>
-                    <button class="btn nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
-                        type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Out-Station
-                        Trips (Round Trip)</button>
-
-                </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
-                    tabindex="0">
-                    <ul class="text-start py-4">
-                        <li><span style="text-decoration: none; color: var(--secondarycolor) ;" href=""> Minimum
-                                Duration:</span>
-                            The minimum booking duration is 4 hours, with a charge of Rs 500.</li>
-                        <li class="pt-4"><span style="text-decoration: none; color: var(--secondarycolor) ;" href="">
-                                Additional Hour Charges:</span>
-                            Beyond the initial 4 hours, an extra charge of Rs 80 per hour will be applicable.</li>
-                        <li class="pt-4"><span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Food
-                                Responsibility:</span>
-                            Customers are required to assume responsibility for food arrangements.</li>
-                        <li class="pt-4"><span style="text-decoration: none; color: var(--secondarycolor) ;" href="">
-                                Cancellation Policy:</span>
-                            In the event of a cancellation, a charge of Rs 200 will be incurred if the cancellation
-                            notice is received less than 1 hour prior to the scheduled booking time.</li>
-                    </ul>
-                </div>
-                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                    tabindex="0">
-                    <ul class="text-start py-4">
-                        <li><span style="text-decoration: none; color: var(--secondarycolor) ;" href=""> Minimum
-                            Duration:</span>
-                            A minimum charge of Rs 1300 is applicable for distances up to 150 km.</li>
-                        <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">
-                            Excess Kilometer Charge:</span>
-                            For distances exceeding 150 km, an additional charge of Rs 4 per kilometer will be applied.
-                        </li>
-                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Night Charge:</span>
-                            For services between 10 pm and 6 am, an extra charge of Rs 100 will be added.</li>
-                        <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Cancellation Charges:</span> 
-                            In the event of cancellation, a fee of Rs 200 will be levied.</li>
-                        <li class="pt-4">
-                            <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Additional Expenses:</span> 
-                            Bus charges and food expenses are not included and are the responsibility of the customers.
-                        </li>
-                    </ul>
+    <div class="container">
 
 
-
-                </div>
-                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
-                    tabindex="0">
-                    <ul class="text-start py-4">
-                        <li>  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Daily 12-Hour Rental:</span>
-                            The standard charge for a 12-hour period is Rs 1200. </li>
-                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Daily 12-Hour Rental with Distance Limit:</span> 
-                            For a 12-hour duration and up to 350 km, the rate remains Rs 1200.</li>
-                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href=""> Excess Kilometer Charge:</span>
-                            For distances exceeding 350 km, the charge is Rs 1300.</li>
-                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Additional Hourly Rate:</span>
-
-                            After the initial 12 hours, an extra charge of Rs 80 per hour will be applied, and customers
-                            are responsible for additional food and accommodation costs.</li>
-                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Night Charges:</span> 
-                            From 10 pm to 6 am, an additional charge of Rs 100 will be incurred.</li>
-                        <li class="pt-4">  <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Cancellation Fees:</span> 
-
-                        
-                            In case of cancellation, a fee of Rs 200 will be applicable.</li>
-                    </ul>
-                </div>
-                <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab"
-                    tabindex="0">...</div>
-            </div>
-        </div>
-    </section>
-    <!-- section two ends -->
-    <!-- car animation -->
-    <section>
-        <div class=" carrun  ">
-            <div class="fontcontent contentImg runcar ">
-                10% Offer on First Order...
-
-                <!-- <img  class="runcar" src="./IMAGES/carrun.png" alt=""> -->
-                <img src="./IMAGES/carclr.png" alt="">
-            </div>
-        </div>
-    </section>
-    <!-- car animation ends -->
-
-
-
-
-
-    <!-- section three -->
-    <div class="sectionThree ">
-        <div class="container">
-            <div class="row py-4">
-                <div class="bgimg  col-md-6">
-                    <div>
-                        <h2 class=" fonthead text-center py-4">Why Choose Us ?</h2>
+        <section class="sectionOne ">
+            <div class="container pt-4 px-0">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-8">
+                        <h2 class="onetext text-center px-2 pb-3">How It Works</h2>
                     </div>
                 </div>
-                <div class="col-md-6 py-4 d-flex justify-content-center align-items-center">
-                    <ul class="fontcontent">
-                        <li>24/7 Availability: Reliable service around the clock.</li>
-                        <br>
-                        <li> Professional Drivers: Experienced and courteous chauffeurs.</li>
-                        <br>
-                        <li> Affordable Rates: Transparent pricing with no hidden fees.</li>
-                        <br>
-                        <li>Easy Booking: Simple online reservations or call us directly.</li>
-                        <br>
-                        <li> Safe and Clean: Well-maintained vehicles for your comfort.</li>
-                    </ul>
+
+                <div class="row">
+                    <div class="col-md-6 d-flex  justify-content-center align-items-center">
+
+                        <img src="./IMAGES/Order ride-bro (1).png" class=" sideimg img-fluid ">
+
+                    </div>
+                    <div class="pb-2 col-md-6 text-center">
+                        <p class="px-2  fontcontent text-center pt-2">
+                            <b> Booking Made Simple</b> <br>
+                            <br>
+                            Step 1: Enter Your Location - Tell us where you're starting from. <br>
+                            <br>
+                            Step 2: Choose Your Destination - Let us know where you're headed. <br>
+                            <br>
+                            Step 3: Confirm Your Ride - Select your ride type and confirm. <br>
+                        </p>
+
+                        <button class="btn "> Book Your Ride
+                            Now</button>
+
+                    </div>
+
                 </div>
-                <div class="fontcontent py-4 col px-2 d-flex justify-content-between align-items-center">
-                    <div class="col-sm-4 ">
 
-                        <div class="ova-icon-box template1">
-                            <div class="text-center  content">
-                                <img class="y1img" src="./IMAGES/bestprice.png" alt="">
-                                <h4 class="text-center title">Best <br>Pricing </h4>
-                            </div>
+                </di>
+        </section>
+        <!-- sectionOne ends -->
 
+        <!-- section two -->
+        <section id="tariff" class="sectionTwo">
+            <div class="container  p-0">
+                <nav>
+                    <div class="py-4 d-flex justify-content-center align-items-center  nav nav-tabs" id="nav-tab"
+                        role="tablist">
+                        <div class="py-2"><button class="btn nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                aria-selected="true">Local Trips</button></div>
+                        <div class="py-2"> <button class="btn  nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                aria-selected="false">Out-Station
+                                Trips (One-Way)</button></div>
+                        <div class="py-2"><button class="btn nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                aria-selected="false">Out-Station
+                                Trips (Round Trip)</button></div>
+
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="px-4 tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                        tabindex="0">
+                        <ul class="text-start  py-4">
+                            <li><span style="text-decoration: none; color: var(--secondarycolor) ;" href=""> Minimum
+                                    Duration:</span>
+                                The minimum booking duration is 4 hours, with a charge of Rs 500.</li>
+                            <li class="pt-4"><span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">
+                                    Additional Hour Charges:</span>
+                                Beyond the initial 4 hours, an extra charge of Rs 80 per hour will be applicable.</li>
+                            <li class="pt-4"><span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">Food
+                                    Responsibility:</span>
+                                Customers are required to assume responsibility for food arrangements.</li>
+                            <li class="pt-4"><span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">
+                                    Cancellation Policy:</span>
+                                In the event of a cancellation, a charge of Rs 200 will be incurred if the cancellation
+                                notice is received less than 1 hour prior to the scheduled booking time.</li>
+                        </ul>
+                    </div>
+                    <div class="px-4 tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                        tabindex="0">
+                        <ul class="text-start  py-4">
+                            <li><span style="text-decoration: none; color: var(--secondarycolor) ;" href=""> Minimum
+                                    Duration:</span>
+                                A minimum charge of Rs 1300 is applicable for distances up to 150 km.</li>
+                            <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">
+                                    Excess Kilometer Charge:</span>
+                                For distances exceeding 150 km, an additional charge of Rs 4 per kilometer will be
+                                applied.
+                            </li>
+                            <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">Night Charge:</span>
+                                For services between 10 pm and 6 am, an extra charge of Rs 100 will be added.</li>
+                            <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">Cancellation Charges:</span>
+                                In the event of cancellation, a fee of Rs 200 will be levied.</li>
+                            <li class="pt-4">
+                                <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Additional
+                                    Expenses:</span>
+                                Bus charges and food expenses are not included and are the responsibility of the
+                                customers.
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="px-4 tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+                        tabindex="0">
+                        <ul class=" text-start py-4">
+                            <li> <span style="text-decoration: none; color: var(--secondarycolor) ;" href="">Daily
+                                    12-Hour
+                                    Rental:</span>
+                                The standard charge for a 12-hour period is Rs 1200. </li>
+                            <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">Daily 12-Hour Rental with Distance Limit:</span>
+                                For a 12-hour duration and up to 350 km, the rate remains Rs 1200.</li>
+                            <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">
+                                    Excess Kilometer Charge:</span>
+                                For distances exceeding 350 km, the charge is Rs 1300.</li>
+                            <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">Additional Hourly Rate:</span>
+
+                                After the initial 12 hours, an extra charge of Rs 80 per hour will be applied, and
+                                customers
+                                are responsible for additional food and accommodation costs.</li>
+                            <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">Night Charges:</span>
+                                From 10 pm to 6 am, an additional charge of Rs 100 will be incurred.</li>
+                            <li class="pt-4"> <span style="text-decoration: none; color: var(--secondarycolor) ;"
+                                    href="">Cancellation Fees:</span>
+                                In case of cancellation, a fee of Rs 200 will be applicable.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab"
+                        tabindex="0">...</div>
+                </div>
+            </div>
+        </section>
+        <!-- section two ends -->
+
+
+        <!-- car animation -->
+        <section>
+            <div class="container carrun  ">
+                <div class="fontcontent contentImg runcar ">
+                    10% Offer on First Order...
+
+                    <!-- <img  class="runcar" src="./IMAGES/carrun.png" alt=""> -->
+                    <img src="./IMAGES/carclr.png" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- car animation ends -->
+
+
+        <!-- section three -->
+        <div class="sectionThree " id="about">
+            <div class="container">
+                <div class="row py-4">
+                    <div class="py-4 bgimg  col-md-6">
+                        <div>
+                            <h2 class="why fonthead text-center ">Why Choose Us ?</h2>
                         </div>
                     </div>
-                    <div class="col-sm-4 ">
-                        <div class="ova-icon-box template1">
-                            <div class="text-center content">
-                                <img class="y2img" src="./IMAGES/ontime.png" alt="">
-                                <h4 class="title">On-Time <br>Pickup </h4>
+                    <div class="col-md-6 py-4 d-flex justify-content-center align-items-center">
+                        <ul class="fontcontent">
+                            <li>24/7 Availability: Reliable service around the clock.</li>
+                            <br>
+                            <li> Professional Drivers: Experienced and courteous chauffeurs.</li>
+                            <br>
+                            <li> Affordable Rates: Transparent pricing with no hidden fees.</li>
+                            <br>
+                            <li>Easy Booking: Simple online reservations or call us directly.</li>
+                            <br>
+                            <li> Safe and Clean: Well-maintained vehicles for your comfort.</li>
+                        </ul>
+                    </div>
+                    <div class="fontcontent py-4 col px-2 d-flex justify-content-between align-items-center">
+                        <div class="col-sm-4 ">
+
+                            <div class="ova-icon-box template1">
+                                <div class="text-center  content">
+                                    <img class="y1img" src="./IMAGES/bestprice.png" alt="">
+                                    <h4 class="text-center title">Best <br>Pricing </h4>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="ova-icon-box template1">
-
-                            <div class="content text-center">
-                                <img class="y3img " src="./IMAGES/safety.png" alt="">
-                                <h4 class=" title">Safety <br> Guarantee</h4>
+                        <div class="col-sm-4 ">
+                            <div class="ova-icon-box template1">
+                                <div class="text-center content">
+                                    <img class="y2img" src="./IMAGES/ontime.png" alt="">
+                                    <h4 class="title">On-Time <br>Pickup </h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="col-sm-4">
+                            <div class="ova-icon-box template1">
 
+                                <div class="content text-center">
+                                    <img class="y3img " src="./IMAGES/safety.png" alt="">
+                                    <h4 class=" title">Safety <br> Guarantee</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+
         </div>
+        <!-- section three  ends-->
+
+
+        <!-- sectionfour -->
+        <section class="sectionFour" id="form">
+
+            <div class="container">
+
+                <h3 class="fonthead py-4 text-center th-title">Ready to Ride?</h3>
+                <form action="" class="form d-flex justify-content-center align-items-center">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <input size="40" class="form-control" type="text" placeholder="Enter your Name" id="name"
+                                class="input" autocomplete="on" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input size="40" class="form-control" type="text" placeholder="Phone Number"
+                                id="phonenumber" class="input" autocomplete="on" required>
+                        </div>
+
+                        <div class="form-group col-sm-6">
+
+                            <input size="40" class="form-control" type="text" placeholder="Email Address" id="email"
+                                class="input" autocomplete="on" required>
+                        </div>
+
+
+                        <div class="form-group col-sm-6">
+                            <input size="40" class="form-control" type="number" placeholder="Number of Passengers"
+                                id="passengers" class="input" autocomplete="on" required>
+                        </div>
+
+                        <div class="form-group col-12">
+                            <select class="form-select text-center" id="vehicle">
+                                <option value="" disabled selected> Vehicle Type</option>
+                                <option value="1">Mini - 4 Seater</option>
+                                <option value="2">Sedan - 4 Seater</option>
+                                <option value="3">SUV - 7 Seater</option>
+                                <option value="4">Maxi Van - 11 Seater</option>
+                                <option value="4">Bus - 52 Seater</option>
+                            </select>
+                            <small></small>
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <input size="40" class="form-control" type="text" placeholder="Start Destination"
+                                id="startDestination" class="input" autocomplete="on" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input size="40" class="form-control" type="text" placeholder="End Destination"
+                                id="endDestination" class="input" autocomplete="on" required>
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <input size="40" class="form-control" type="Date" placeholder="Select Date" id="date"
+                                class="input" autocomplete="on" required>
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <input size="40" class="form-control" type="time" placeholder="Select Time" id="time"
+                                class="input" autocomplete="on" required>
+                        </div>
+
+                        <div class="form-group col-sm-6">
+
+                            <input type="checkbox" name="agree" id="agree" required>
+                            <label style="color: white;" class="fontcontent" for="remember me"> Remember me ?<label>
+                        </div>
+                        <div class="form-btn pb-4 col-12">
+                            <button class="btn th-btn radius-btn" type="submit">Book Now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+        <!-- section four ends -->
+
+
+        <!-- section five  -->
+        <section class="sectionFive" id="contact">
+            <div class=" fontcontent container">
+                <div class="row py-4 text-center d-flex justify-content-center align-items-center">
+                    <h2 class="fonthead py-4">Contact Us</h2>
+                    <div class="col-lg-6 px-5 py-4 px-0 contact">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img class="contimg"
+                                    src="./IMAGES/profile.png" alt=""></span>
+                            <input type="text" class="form-control" placeholder="Name" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img class="contimg"
+                                    src="./IMAGES/mail-96.png" alt=""></span>
+                            <input type="text" class="form-control" placeholder="Email" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img class="contimg"
+                                    src="./IMAGES/topic-96.png" alt=""></span>
+                            <input type="text" class=" form-control" placeholder="Message">
+                        </div>
+                        <button class="btn mt-2"><a href="">Contact Me</a></button>
+                    </div>
+                    <div class="col-lg-6 px-2 py-4">
+                        <iframe class=" contactmap"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.260929394309!2d76.96617597452014!3d11.01903915467286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85930d96714d1%3A0x663d60590213143d!2sCloudVista%20Acting%20Drivers%20and%20Travels!5e0!3m2!1sen!2sin!4v1724342461412!5m2!1sen!2sin"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </div>
-    <!-- section three  ends-->
-
-
-    <!-- sectionfour -->
-    <section class="sectionFour" id="form">
-        <div class="container">
-            <div class="fontcontent row">
-                <div class="col-md-6 d-flex align-items-center">
-                    <!-- <img src="./CaroImage/car3.jpeg" class="img-fluid" alt=""> -->
-                </div>
-
-
-                <div class="booking-form4 ajax-contact th-bg">
-                    <h3 class="fonthead py-4 text-center th-title">Ready to Ride?</h3>
-                    <h2 style="color: white;" class="fonthead text-center th-title">Get where you need to go with ease.
-                    </h2>
-                    <form action="/submit-form" method="post" class="form" aria-label="Contact form">
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <input size="40" class="form-control" id="name" aria-required="true"
-                                    placeholder="Your Name" type="text" name="name" required />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input size="40" class="form-control" id="phone" aria-invalid="false"
-                                    placeholder="Phone Number" type="tel" name="phone" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input size="40" class="form-control" id="email" aria-required="true"
-                                    aria-invalid="false" placeholder="Email Address" type="email" name="email"
-                                    required />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input size="40" class="form-control" id="passengers" aria-required="true"
-                                    aria-invalid="false" placeholder="Number of passengers" type="number"
-                                    name="passengers" required />
-                            </div>
-                            <div class="form-group col-12">
-                                <select class="form-select text-center" aria-invalid="false" name="vehicle_type">
-                                    <option value="" disabled selected>Vehicle Type</option>
-                                    <option value="mini_4_seater">Mini- 4 Seater</option>
-                                    <option value="sedan_4_seater">Sedan-4 Seater</option>
-                                    <option value="suv_7_seater">SUV -7 Seater</option>
-                                    <option value="maxi_van_11_seater">Maxi Van -11 Seater</option>
-                                    <option value="bus_52_seater">Bus-52 Seater</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input size="40" class="form-control" id="start_destination" aria-required="true"
-                                    placeholder="Start Destination" type="text" name="start_destination" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input size="40" class="form-control" id="end_destination" aria-required="true"
-                                    placeholder="End Destination" type="text" name="end_destination" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input size="40" class="form-control" id="date" aria-required="true"
-                                    placeholder="Select Date" type="date" name="date" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input size="40" class="form-control" id="time" aria-required="true"
-                                    placeholder="Select Time" type="time" name="time" />
-                            </div>
-                            <div class="form-btn col-12">
-                                <button class="btn th-btn radius-btn" type="submit">Book Now</button>
-                            </div>
-                        </div>
-                        <p class="form-messages mb-0 mt-3"></p>
-                    </form>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-    <!-- section four ends -->
-
-
-    <!-- section five  -->
-    <section class="sectionFive">
-        <div class=" fontcontent container">
-            <div class="row py-4 text-center d-flex justify-content-around align-items-center">
-                <h2 class="fonthead py-4">Contact Us</h2>
-                <div class="col-lg-6 px-5 py-4 px-0 contact">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1"><img class="contimg" src="./IMAGES/profile.png"
-                                alt=""></span>
-                        <input type="text" class="form-control" placeholder="Name" aria-label="Username"
-                            aria-describedby="basic-addon1">
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1"><img class="contimg" src="./IMAGES/mail-96.png"
-                                alt=""></span>
-                        <input type="text" class="form-control" placeholder="Email" aria-label="Username"
-                            aria-describedby="basic-addon1">
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1"><img class="contimg"
-                                src="./IMAGES/topic-96.png" alt=""></span>
-                        <input type="text" class=" form-control" placeholder="Message">
-                    </div>
-                    <button class="btn mt-2"><a href="">Contact Me</a></button>
-                </div>
-                <div class="contactmap">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.260929394309!2d76.96617597452014!3d11.01903915467286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85930d96714d1%3A0x663d60590213143d!2sCloudVista%20Acting%20Drivers%20and%20Travels!5e0!3m2!1sen!2sin!4v1724342461412!5m2!1sen!2sin"
-                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
     <!-- section five ends -->
 
 
@@ -933,21 +1056,20 @@
                 <!--Grid row-->
                 <div class="row">
                     <!--Grid column-->
-                    <div style="color: white;" class="fontcontent col-sm-6 mb-4 mb-md-0">
-                        <!-- <h5 class="text-uppercase"> Quick Links</h5> -->
+                    <div style="color: white;" class=" col-sm-6 mb-4 mb-md-0">
 
-                        <ul class="list-unstyled mb-0">
+                        <ul  class="fontcontent list-unstyled mb-0">
                             <li>
-                                <a class="" href="#!">About </a>
+                                <a style="font-size: 18px;" class="" href="#about">About </a>
                             </li>
                             <li>
-                                <a class="" href="#!">Phone</a>
+                                <a style="font-size: 18px;" class="" href="https://wa.me/8778427467">Phone</a>
                             </li>
                             <li>
-                                <a class="" href="#!">Email</a>
+                                <a style="font-size: 18px;" class="" href="mailto:karthiktours3506@gmail.com">Email</a>
                             </li>
                             <li>
-                                <a class="" href="#!">Book Us</a>
+                                <a style="font-size: 18px;" class="" href="#form">Book Us</a>
                             </li>
                         </ul>
                     </div>
@@ -955,20 +1077,19 @@
 
                     <!--Grid column-->
                     <div class="col mb-4 mb-md-0">
-                        <!-- <h5 style="color: white;" class="text-uppercase">Links</h5> -->
 
-                        <ul class="list-unstyled mb-0">
+                        <ul class="fontcontent list-unstyled mb-0">
                             <li>
-                                <a class="" href="#!">Enquiry</a>
+                                <a style="font-size: 18px;" class="" href="#!">Enquiry</a>
                             </li>
                             <li>
-                                <a class="" href="#!">Our Tariff</a>
+                                <a style="font-size: 18px;" class="" href="#!">Our Tariff</a>
                             </li>
                             <li>
-                                <a class="" href="#!">Career</a>
+                                <a style="font-size: 18px;" class="" href="#!">Career</a>
                             </li>
                             <li>
-                                <a class="" href="#!">Terms of Service</a>
+                                <a style="font-size: 18px;" class="" href="#!">Terms of Service</a>
                             </li>
                         </ul>
                     </div>
@@ -1016,6 +1137,13 @@
         integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll('.line').forEach(line => {
+                const text = line.textContent;
+                line.innerHTML = text.split('').map(letter => `<span>${letter}</span>`).join('');
+            });
+        });</script>
 
 </body>
 

@@ -1,0 +1,529 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --primarycolor: #09294a;
+    --secondarycolor: #ffc20e;
+    --tertiraycolor: #0c3866;
+    --fontheading: "Playfair Display SC", serif;
+    --fontcontent: "Crimson Text", serif;
+}
+
+.fonthead {
+    font-family: var(--fontheading);
+    font-weight: 400;
+}
+
+.fontcontent {
+    font-family: var(--fontcontent);
+}
+
+footer.footer.bg-body-tertiary {
+    background-color: var(--tertiraycolor) !important;
+
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: var(--primarycolor) !important;
+}
+
+.navbar a {
+    color: var(--secondarycolor);
+    font-size: 18px;
+    font-family: var(--fontheading);
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+.twotext {
+    font-family: var(--fontcontent);
+    font-size: 20px;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+    color: rgb(255, 255, 255);
+}
+
+.navbar-nav .nav-link.active:hover,
+.navbar-nav .nav-link.show:hover {
+    color: var(--secondarycolor);
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover {
+    color: white !important;
+}
+
+.sectionOne {
+    /* background-color: var(--tertiraycolor); */
+    color: var(--primarycolor);
+}
+
+.sectionTwo {
+    background-color: var(--tertiraycolor);
+    color: white;
+}
+
+.nav-tabs .nav-link {
+    margin-bottom: calc(-1* var(--bs-nav-tabs-border-width));
+    border: var(--bs-nav-tabs-border-width) solid transparent;
+    border-radius: 0px !important;
+    color: var(--primarycolor);
+    margin-right: 5px;
+
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: var(--primarycolor) !important;
+}
+
+.sectionFour {
+    background-color: var(--tertiraycolor);
+}
+
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: var(--primarycolor);
+    outline: 0;
+    box-shadow: none;
+}
+
+strong {
+    color: #13005A;
+}
+
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+    /* background-color: #141e6184; */
+    color: white;
+
+}
+
+
+.accordion {
+
+    color: var(--primarycolor);
+    border-bottom: 7px;
+
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #141e6184;
+    color: white;
+
+}
+
+.navbar-toggler {
+    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+    font-size: var(--bs-navbar-toggler-font-size);
+    line-height: 1;
+    color: rgba(87, 137, 207, 0.467);
+    background-color: white !important;
+}
+
+.mx-auto {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sectionsThree {
+    margin: 10px;
+    padding: 0px;
+
+}
+
+.runcar img {
+    height: 110px;
+}
+
+.carrun {
+    position: relative;
+    width: 100%;
+    /* Full width of the viewport */
+    height: 175px;
+    /* Full height of the viewport */
+    overflow: hidden;
+}
+
+.runcar {
+    position: absolute;
+    bottom: 0;
+    left: -800px;
+    margin-bottom: 0px;
+    animation: moveRight 5s linear infinite;
+
+}
+
+/* Define the keyframes for the animation */
+@keyframes moveRight {
+    from {
+        transform: translateX(0);
+
+    }
+
+    to {
+        transform: translateX(100vw);
+
+    }
+}
+
+.btn {
+    --bs-btn-color: #ffffff;
+    /* --bs-btn-border-color: #ffffff; */
+    --bs-btn-hover-color: #6B728E;
+    --bs-btn-hover-bg: white !important;
+    --bs-btn-hover-border-color: #6B728E !important;
+    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-active-color: #6B728E;
+    --bs-btn-active-bg: ;
+    --bs-btn-active-border-color: white;
+    /* --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); */
+    /* --bs-btn-disabled-color: #2e1987; */
+    /* --bs-btn-disabled-bg: transparent; */
+    /* --bs-btn-disabled-border-color: #2e1987; */
+    /* --bs-gradient: none; */
+}
+
+.onetext {
+    color: var(--primarycolor);
+    font-family: var(--fontheading);
+    font-weight: 700;
+}
+
+
+
+h2 {
+    color: var(--primarycolor);
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+}
+
+.sideimg {
+    animation: bounce 5s infinite;
+    height: 300px;
+    margin-bottom: 25px;
+}
+
+
+.btn {
+    background-color: var(--secondarycolor);
+    color: var(--tertiraycolor);
+
+
+}
+
+.btn a {
+    text-decoration: none;
+    color: var(--tertiraycolor) !important;
+    border-radius: 30px !important;
+}
+
+.btn a:hover {
+    text-decoration: none;
+    color: var(--primarycolor) !important;
+    border-radius: 30px !important;
+}
+
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.booking-form4 {
+    background-color: var(--tertiraycolor);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form4 h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.form-btn {
+    text-align: center;
+}
+
+.form-select:focus {
+    border-color: #ffffff;
+    outline: 0;
+    box-shadow: none;
+    color: #8a8989;
+}
+
+.btn.th-btn {
+    background-color: var(--secondarycolor);
+    color: var(--tertiraycolor);
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.btn.th-btn:hover {
+    background-color: white;
+    color: #1B1A55;
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .runcar img {
+        height: 100px;
+    }
+}
+
+.bgimg {
+    background-image: url(./IMAGES/headerimg2.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 10px;
+    height: 270px;
+    animation: zoomInOut 10s infinite alternate;
+}
+
+.y1img {
+    height: 80px;
+}
+
+.contentImg {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: var(--primarycolor);
+    text-shadow: 2px 2px 2px rgb(102, 100, 100);
+
+}
+
+.y2img {
+    height: 75px;
+}
+
+.y3img {
+    height: 70px;
+}
+
+.headingbg {
+    background-image: url(./IMAGES/headerimg3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.foothead {
+    color: white;
+    text-decoration: none !important;
+    font-family: var(--fontheading);
+    font-weight: 700;
+}
+
+footer li a {
+    text-decoration: none;
+    color: var(--secondarycolor);
+
+}
+
+footer li {
+    list-style-type: none;
+    font-size: 25px;
+}
+
+img.contimg,
+svg {
+    vertical-align: middle;
+    height: 50px !important;
+}
+
+.nav-link active {
+    color: white;
+}
+
+
+
+@keyframes zoomInOut {
+    0% {
+        background-size: 100%;
+    }
+
+    50% {
+        background-size: 110%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
+
+.contactmap {
+    height: 300px !important;
+    width: 300px !important;
+    box-shadow: 10px 10px 5px rgb(200, 201, 203);
+}
+
+
+.contact {
+    box-shadow: 5px 5px 10px 2px rgb(200, 201, 203);
+}
+
+.dull {
+    color: #5e5c5c !important;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+}
+
+.headerbar {
+    height: 50px;
+    width: 100%;
+    color: white;
+    background-color: var(--secondarycolor);
+
+}
+
+footer li {
+    list-style-type: none;
+    font-size: 25px;
+    color: white !important;
+}
+
+.headtxt {
+    position: relative;
+    top: 110px;
+    color: var(--secondarycolor);
+    text-align: center;
+}
+
+.animated-text {
+    display: inline-block;
+}
+
+.line {
+    display: block;
+    overflow: hidden;
+    /* Hide overflowing content */
+    position: relative;
+    white-space: nowrap;
+    /* Ensure each line stays on one line */
+}
+
+.why {
+    color: white;
+    position: relative;
+    top: 50px;
+}
+
+.line span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(1em);
+    animation: reveal 0.5s ease-out forwards;
+}
+
+.line:nth-of-type(1) span {
+    animation: reveal 0.5s ease-out forwards;
+}
+
+.line:nth-of-type(2) span {
+    animation: reveal 0.5s ease-out 1s forwards;
+    /* Delay */
+}
+
+.line:nth-of-type(3) span {
+    animation: reveal 0.5s ease-out 2s forwards;
+    /* Further delay */
+}
+
+.form-group.error {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(1em);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes type {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        /* flex-basis: auto; */
+    }
+
+
+}

@@ -23,7 +23,7 @@
 }
 
 footer.footer.bg-body-tertiary {
-    background-color: var(--tertiraycolor) !important;
+    background-color:white ;
 
 }
 
@@ -219,7 +219,9 @@ h3 {
     height: 300px;
     margin-bottom: 25px;
 }
-
+.sideimgg{
+    height: 400px;
+}
 
 .btn {
     background-color: var(--secondarycolor);
